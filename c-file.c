@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-extern int __stdcall asmfunc(int* array, int size);
+int __stdcall asmfunc(int* array, int size);
 
 #ifdef __cplusplus
 }
@@ -16,10 +16,12 @@ extern int __stdcall asmfunc(int* array, int size);
 
 
 int main() {
-   // system("cls");
+    system("cls");
+       // Declare and initialize the array
     int numbers[] = {12,-7,5,-3,8,-2};
     int size = sizeof(numbers) / sizeof(numbers[0]);
     int sum = asmfunc(numbers, size) ;
+    //Display the result
     printf("Sum of all positive numbers: %d\n",sum);
 getch();
 
@@ -35,22 +37,3 @@ getch();
     
     return 0;
 }
-// sum_positive_numbers.c
-//#include <stdio.h>
-
-// Declaration of the assembly function
-//extern int sum_positive_asm(int* array, int size);
-
-//int main() {
-    // Declare and initialize the array
-   // int numbers[] = {12, -7, 5, -3, 8, -2};
-   // int size = sizeof(numbers) / sizeof(numbers[0]);
-
-    // Call the assembly function to compute the sum of positive numbers
-   // int sum = sum_positive_asm(numbers, size);
-
-    // Display the result
-  //  printf("Sum of positive numbers: %d\n", sum);
-
-   // return 0;
-//}
